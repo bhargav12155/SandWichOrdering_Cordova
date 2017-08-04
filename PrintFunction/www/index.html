@@ -1,0 +1,476 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="Bhargav" content="">
+
+    <title>Sub made Easys</title>
+
+    <!-- Bootstrap Core CSS -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/w3.css" rel="stylesheet">
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+</head>
+
+<body onload="playSound('sounds/Welcome_speech.mp3')" style="background: url('images/bg.jpg')">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top w3-center " role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+
+                <a id="heading" class="navbar-brand w3-xxlarge w3-text-white ">Welcome to Rensselaer Gas Station and Food Mart</a>
+            </div>
+
+            <!-- /.navbar-collapse
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+
+
+    <form class="form-horizontal marginleft30">
+        <div class="row  w3-padding-24 ">
+            <div id="menuScreen" class="marginleft20 marginright20 ">
+                <div class="row ">
+                    <div class="col-lg-12 ">
+                        <h1 class="page-header marginleft30 shadowHeading sameline ">Order your sub in Simple steps</h1>
+                        <button type="button" class="btn btn-danger marginleft60" onclick=resetAll()>Reset Order</button>
+
+                    </div>
+
+                    <div id="step1" class="  col-lg-2 col-md-4 col-xs-6 w3-pinks">
+                        <ul class="pager  ">
+                            <li class=" next w3-left w3-small " style="margin-top:-25px"><a>Step1 &rarr;</a></li>
+                        </ul>
+                        <ul class="nav nav-pills w3-center">
+                            <li class="active w3-width178"><a> Bread/Wrap</a></li>
+                        </ul>
+
+                        <div class="form-group">
+                            <div class="col-lg-10">
+                                <div class="radio w3-large w3-text-white">
+                                    <label><input type="radio" name="bread" id="whiteWrap" value="whiteWrap" onclick="getBread(this.value)"  >White Wrap</label>
+                                    <label><input type="radio" name="bread" id="wheatWrap" value="wheatWrap" onclick="getBread(this.value)" >Wheat Wrap</label>
+                                    <hr>
+                                    <label><input type="radio" name="bread" id="HardRoll" value="HardRoll" onclick="getBread(this.value)" >Hard Roll</label>
+                                    <label><input type="radio" name="bread" id="SubHero" value="SubHero" onclick="getBread(this.value)">Sub Hero</label>
+                                    <label><input type="radio" name="bread" id="WhiteBread" value="WhiteBread" onclick="getBread(this.value)" >White Bread</label>
+                                    <label><input type="radio" name="bread" id="WheatBread" value="WheatBread" onclick="getBread(this.value)">Wheat Bread</label>
+                                    <label><input type="radio" name="bread" id="RayBread" value="RayBread" onclick="getBread(this.value)">Ray Bread</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="step2" class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <ul class="pager ">
+                            <li class=" next w3-left w3-small "><a>Step2 &rarr;</a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="active w3-width178 w3-center"><a>Meat</a></li>
+                        </ul>
+                        <div class="form-group">
+                            <div class="col-lg-10">
+                                <div class="radio scroll w3-large w3-text-white">
+                                    <label><input type="radio" name="meat" id="noMeat" value="NoMeat" onclick="getMeat(this.value)"  >No Meat</label>
+                                    <label><input type="radio" name="meat" id="OverGoldTrukey" value="OverGoldTrukey" onclick="getMeat(this.value)"  >OvenGold Turkey</label>
+                                    <label><input type="radio" name="meat" id="PepperMillTurkey" value="PepperMillTurkey"  onclick="getMeat(this.value)">PepperMill Turkey</label>
+                                    <label><input type="radio" name="meat" id="MapleHoneyTurkey" value="MapleHoneyTurkey"   onclick="getMeat(this.value)">PepperMill Turkey</label>
+                                    <label><input type="radio" name="meat" id="DeluxeHam" value="DeluxeHam"   onclick="getMeat(this.value)">Deluxe Ham</label>
+                                    <label><input type="radio" name="meat" id="BlackForestHam" value="BlackForestHam"   onclick="getMeat(this.value)">BlackForest Ham</label>
+                                    <label><input type="radio" name="meat" id="SweetSliceHam" value="SweetSliceHam"   onclick="getMeat(this.value)">Sweet Slice Ham</label>
+                                    <label><input type="radio" name="meat" id="CappyHam" value="CappyHam"   onclick="getMeat(this.value)">Cappy Ham</label>
+                                    <label><input type="radio" name="meat" id="Bologna" value="Bologna"   onclick="getMeat(this.value)">Bologna</label>
+                                    <label><input type="radio" name="meat" id="EverRoastedChicken" value="EverRoastedChicken"   onclick="getMeat(this.value)">Ever Roasted Chicken</label>
+                                    <label><input type="radio" name="meat" id="ChipotleChicken" value="ChipotleChicken"   onclick="getMeat(this.value)">Chipotle Chicken</label>
+                                    <label><input type="radio" name="meat" id="BuffaloChicken" value="BuffaloChicken"   onclick="getMeat(this.value)">Buffalo Chicken</label>
+                                    <label><input type="radio" name="meat" id="DeluxeBeef" value="DeluxeBeef"   onclick="getMeat(this.value)">Deluxe Beef</label>
+                                    <label><input type="radio" name="meat" id="CornedBeef" value="CornedBeef"   onclick="getMeat(this.value)">Corned Beef</label>
+                                    <label><input type="radio" name="meat" id="Pastrami" value="Pastrami"   onclick="getMeat(this.value)">Pastrami</label><br>
+                                    <label><input type="radio" name="meat" id="Genoa" value="Genoa"   onclick="getMeat(this.value)">Genoa</label>
+                                    <label><input type="radio" name="meat" id="HardSalami" value="HardSalami"   onclick="getMeat(this.value)">Hard Salami</label>
+                                    <label><input type="radio" name="meat" id="Pepperoni" value="Pepperoni"   onclick="getMeat(this.value)">Pepperoni</label>
+                                    <label><input type="radio" name="meat" id="HoneyTurkey" value="HoneyTurkey"   onclick="getMeat(this.value)">Honey Turkey</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <p class="w3-text-red">
+                            <span class="glyphicon glyphicon-star small" aria-hidden="true"></span> scroll down for more
+                        </p>
+
+                    </div>
+
+
+                    <div id="step4" class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <ul class="pager">
+                            <li class="  next w3-left w3-small"><a>Step3 &rarr;</a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="active w3-width178"><a>Sauce</a></li>
+                        </ul>
+                        <div class="form-group">
+                            <div class="col-lg-10">
+                                <div class="radio w3-large w3-text-white">
+                                    <label><input type="radio" name="sauce" id="NoSauce" value="NoSauce"   onclick="getSauce(this.value)">No Sauce</label><br>
+                                    <label><input type="radio" name="sauce" id="Chipotle" value="Chipotle"   onclick="getSauce(this.value)">Chipotle</label><br>
+                                    <label><input type="radio" name="sauce" id="Cajun" value="Cajun" onclick="getSauce(this.value)">Cajun</label><br>
+                                    <label><input type="radio" name="sauce" id="Mayo" value="Mayo" onclick="getSauce(this.value)">Mayo</label>
+                                    <label><input type="radio" name="sauce" id="HorseradishSauce" value="HorseradishSauce" onclick="getSauce(this.value)">Horseradish Sauce</label>
+                                    <label><input type="radio" name="sauce" id="DeliMustard" value="DeliMustard" onclick="getSauce(this.value)">Deli Mustard</label>
+                                    <label><input type="radio" name="sauce" id="HoneyMustard" value="HoneyMustard" onclick="getSauce(this.value)">Honey Mustard</label>
+                                    <label><input type="radio" name="sauce" id="Pepperhouse" value="Pepperhouse" onclick="getSauce(this.value)">Pepperhouse</label>
+                                    <label><input type="radio" name="sauce" id="SubSauce" value="SubSauce" onclick="getSauce(this.value)">Sub Sauce</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="step3" class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <ul class="pager ">
+                            <li class="  next w3-left w3-small"><a>Step4 &rarr;</a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="active w3-width178"><a>Cheese</a></li>
+                        </ul>
+                        <div class="form-group">
+                            <div class="col-lg-10">
+                                <div class="radio w3-large w3-text-white">
+                                    <label><input type="radio" name="cheese" id="NoCheese" value="NoCheese"   onclick="getCheese(this.value)">NoCheese</label>
+                                    <label><input type="radio" name="cheese" id="FreshMozz" value="FreshMozz"   onclick="getCheese(this.value)">FreshMozz</label>
+                                    <label><input type="radio" name="cheese" id="VTCheddar" value="VTCheddar" onclick="getCheese(this.value)">VT Cheddar</label>
+                                    <label><input type="radio" name="cheese" id="American" value="American" onclick="getCheese(this.value)">American</label>
+                                    <label><input type="radio" name="cheese" id="Muenster" value="Muenster" onclick="getCheese(this.value)">Muenster</label><br>
+                                    <label><input type="radio" name="cheese" id="Swiss" value="Swiss" onclick="getCheese(this.value)">Swiss</label>
+                                    <label><input type="radio" name="cheese" id="Provolone" value="Provolone" onclick="getCheese(this.value)">Provolone</label>
+                                    <label><input type="radio" name="cheese" id="PepperJack" value="PepperJack" onclick="getCheese(this.value)">Pepper Jack</label>
+                                    <label><input type="radio" name="cheese" id="3pepperColby" value="3pepperColby" onclick="getCheese(this.value)">3-Pepper Colby</label>
+                                    <label><input type="radio" name="cheese" id="MarBleu" value="MarBleu" onclick="getCheese(this.value)">MarBleu</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="step4" class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <ul class="pager">
+                            <li class="  next w3-left w3-small"><a>Step5 &rarr;</a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="active w3-width178"><a>Veggies</a></li>
+                        </ul>
+                        <div class="form-group">
+                            <div class="col-lg-10">
+                                <div class="radio w3-large w3-margin-xsmall w3-text-white">
+                                    <label><input type="checkbox" name="veggies" id="Lettuce" value="Lettuce"  onclick="getVeggies(this.value)">Lettuce</label><br>
+                                    <label><input type="checkbox" name="veggies" id="Tomato" value="Tomato" onclick="getVeggies(this.value)">Tomato</label><br>
+                                    <label><input type="checkbox" name="veggies" id="Jalapeno" value="Jalapeno" onclick="getVeggies(this.value)">Jalapeno</label><br>
+                                    <label><input type="checkbox" name="veggies" id="Onion" value="Onion" onclick="getVeggies(this.value)">Onion</label><br>
+                                    <label><input type="checkbox" name="veggies" id="BananaPeppers" value="BananaPeppers" onclick="getVeggies(this.value)">Banana Peppers</label><br>
+
+                                    <hr>
+                                    <ul class="nav nav-pills">
+                                        <li role="presentation" class="active w3-width178 marginleft10"><a>Extras</a></li>
+                                    </ul>
+                                    <br>
+                                    <div id="enabled">
+                                        <label><input type="checkbox" name="veggies" id="XM" value="XM" onclick="getVeggies(this.value)">Extra Meat</label><br>
+                                        <label><input type="checkbox" name="veggies" id="ExtraCheese" value="ExtraCheese" onclick="getVeggies(this.value)">Extra Cheese</label><br>
+                                        <label><input type="checkbox" name="veggies" id="Both" value="Both" onclick="getVeggies(this.value)">Both</label><br>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="confirm" class=" w3-threequarter  thumb">
+                        <ul class="nav nav-pills">
+                            <li class="  w3-width178  "><a class="w3-xlarge w3-text-red ">Your Order</a>
+
+                            </li>
+                            <br>
+                            <!--stores data-->
+                            <p type="text" id="meat"></p>
+                            <p type="text" id="bread"></p>
+                            <p type="text" id="sauce"></p>
+                            <p type="text" id="cheese"></p>
+                            <div id="print">
+
+                                <h4> <br>
+                                    <br>
+                                    <div class="w3-text-white">
+                                        <b id='breadDisplay'>Select Bread</b><br>
+                                        <b id='meatDisplay'>Select Meat</b><br>
+                                        <b id='sauceDisplay'>Select Sauce</b><br>
+                                        <b id='cheeseDisplay'>select Cheese</b><br>
+                                        <b class="w3-text-lightgreen" id='veggiesDisplay'>select Veggies</b><br>
+                                        <hr>
+                                        <b>Estimated:$ </b> <b id='Estimated'></b><br>
+                                    </div>
+                                    <b class="w3-text-orange">Tax :$ </b> <b class="w3-text-orange" id='Tax'></b><br>
+                                    <hr>
+                                    <b class="w3-text-red bold w3-xlarge">Total :$ </b> <b class="w3-text-red w3-xlarge"
+                                        id='TotalPrice'></b><br>
+
+                                    <hr>
+                                </h4>
+
+                                <button onclick="openModal();" type="button" class="btn btn-default w3-green w3-right" data-container="body" data-toggle="popover"
+                                    data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                                    data-original-title="" title="">Confirm Order</button>
+
+                            </div>
+                        </ul>
+
+                    </div>
+
+                    <div id="openModal" class="modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" onclick="closeModal()" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Would you like to place Order and Print Receipt??</h4>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="closeModal()">Close</button>
+                                    <button type="button" class="btn btn-primary" onclick="showPrintScreen();">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer>
+                        <div class="row w3-left">
+                            <div class="col-lg-12">
+                                <p>Copyright Bhargav ;)</p>
+                            </div>
+                        </div>
+                    </footer>
+
+                </div>
+
+            </div>
+        </div>
+        <div id="printScreen" class="hidden w3-text-white ">
+
+
+            <h1>Rensselaer Gas Station and Food Mart</h1>
+            <b id='breadDisplay1'>Select Bread</b><br>
+            <b id='meatDisplay1'>Select Meat</b><br>
+            <b id='sauceDisplay1'>Select Sauce</b><br>
+            <b id='cheeseDisplay1'>select Cheese</b><br>
+            <b id='veggiesDisplay1'>select Veggies</b><br>
+
+            <hr>
+            <b>Estimated:$ </b> <b id='Estimated1'></b><br>
+            <b class="w3-text-blue">Tax :$ </b> <b id='Tax1'></b><br>
+            <hr>
+            <b class="w3-text-red bold w3-xlarge">Total :$ </b> <b class="w3-text-red w3-xlarge" id='TotalPrice1'></b><br>
+
+            <hr>
+
+            <h3>Please wait for your order!</h3>
+            <h3>Thank you for your business</h3>
+            <!--<script type="text/javascript">
+ onload=   resetAll();
+    </script>-->
+
+            <!--<button onclick="resetAll()">test</button>-->
+
+        </div>
+    </form>
+
+    <!--calculations-->
+    <script>
+        var veggiesTotal = " ";
+        var TotalPrice;
+        var audio = document.createElement('audio');
+        var breadPrice = 00, meatPrice = 0, saucePrice = 0, cheesePrice = 0, veggiesPrice = 0, totalAmount = 0;
+        var breadSelected, extraSubPrice = 0, finalveggies, meatSelected, cheeseSelected, sauceSelected, meatSelected;
+
+        function getBread(bread) {
+
+            if (bread === "SubHero") {
+                breadPrice = 3;
+                console.log("I am in get bread selected subhero")
+                displaytotal();
+            }
+            else {
+                breadPrice = 1;
+                console.log("I am in get bread not selected subhero")
+                displaytotal();
+            }
+            breadSelected = document.getElementById("bread").value = (bread);
+            var Total = breadSelected;
+
+            document.getElementById("breadDisplay").innerHTML = Total;
+            document.getElementById("breadDisplay1").innerHTML = Total;
+
+        }
+        console.log("I am displaying bread variett:" + this.breadSelected)
+        function getMeat(meat) {
+            meatPrice = .99;
+            meatSelected = document.getElementById("meat").value = (meat);
+            var Total = meatSelected;
+            document.getElementById("meatDisplay").innerHTML = Total;
+            document.getElementById("meatDisplay1").innerHTML = Total;
+            displaytotal();
+
+        }
+        function getSauce(sauce) {
+            saucePrice = 1;
+            sauceSelected = document.getElementById("sauce").value = (sauce);
+            var Total = sauceSelected;
+            document.getElementById("sauceDisplay").innerHTML = Total;
+            document.getElementById("sauceDisplay1").innerHTML = Total;
+            displaytotal();
+
+        }
+
+        function getCheese(cheese) {
+
+            cheesePrice = 1;
+
+            cheeseSelected = document.getElementById("cheese").value = (cheese);
+            var Total = cheeseSelected;
+            document.getElementById("cheeseDisplay").innerHTML = Total;
+            document.getElementById("cheeseDisplay1").innerHTML = Total;
+            console.log("I am in get cheese")
+
+            displaytotal();
+
+        }
+        function getVeggies(veggies) {
+            veggiesPrice = 1 + extraSubPrice;
+            console.log("I am in get veggies just at selectn=ing veggies")
+
+            displaytotal();
+
+            // prices for normal wraps
+            if (document.getElementById(veggies).value === "XM" && document.getElementById(veggies).value != "ExtraCheese" && document.getElementById(veggies).checked) {
+                console.log("chosen doubles with xm");
+
+                console.log("I cam checking for selected vread" + this.breadSelected)
+                document.getElementById("ExtraCheese").checked = document.getElementById("Both").checked = false;
+                if (this.breadSelected != "SubHero") {
+                    veggiesPrice = 2;
+                }
+                else {
+                    veggiesPrice = 3;
+                }
+                console.log("I am here")
+                console.log("I am in get veggies after selectig extrsas meat")
+
+                displaytotal();
+
+            }
+
+            else if (document.getElementById(veggies).value === "ExtraCheese" && document.getElementById(veggies).value != "XM" && document.getElementById(veggies).checked) {
+                console.log("chosen doubles with Extra Cheese");
+                document.getElementById("XM").checked = document.getElementById("Both").checked = false;
+
+                if (this.breadSelected != "SubHero") {
+                    veggiesPrice = 1.5;
+                }
+                else {
+                    veggiesPrice = 1.99;
+                }
+                console.log("I amin second");
+                console.log("I am in get veggies after selectig extra cheese")
+
+                displaytotal();
+
+            }
+            else if (document.getElementById(veggies).value === "Both" && document.getElementById(veggies).checked) {
+                document.getElementById("ExtraCheese").checked = document.getElementById("XM").checked = false;
+
+                if (this.breadSelected != "SubHero") {
+                    veggiesPrice = 2.5;
+                }
+                else {
+                    veggiesPrice = 4;
+                }
+                console.log("I am in get veggies after selectig botj")
+
+                displaytotal();
+
+            }
+
+
+            var veggies = veggies;
+            if (document.getElementById(veggies).checked == true) {
+                veggiesTotal += veggies + " \n";
+            } else {
+                veggiesTotal = veggiesTotal.replace(veggies, '');
+            }
+            document.getElementById("veggiesDisplay").innerHTML = veggiesTotal;
+            document.getElementById("veggiesDisplay1").innerHTML = veggiesTotal;
+
+
+            //    displaytest(totalAmount);
+            //   printElem(veggies);
+
+        }
+        function displaytotal() {
+            console.log(this.breadPrice, this.meatPrice, this.saucePrice, this.cheesePrice, this.veggiesPrice)
+            var Estimated = document.getElementById("Estimated").innerHTML = document.getElementById("Estimated1").innerHTML = (this.breadPrice + this.meatPrice + this.saucePrice + this.cheesePrice + this.veggiesPrice);
+            var tax = document.getElementById("Tax").innerHTML = document.getElementById("Tax1").innerHTML = Math.round(Estimated * .08 * 100) / 100;
+            TotalPrice = document.getElementById("TotalPrice").innerHTML = document.getElementById("TotalPrice1").innerHTML = Math.round(1.08 * Estimated * 100) / 100;
+        }
+
+        function openModal() {
+            playSound('sounds/printReceipt.ogg');
+            document.getElementById('openModal').style.display = 'block';
+
+        }
+        function showPrintScreen() {
+            document.getElementById('menuScreen').classList.add('hidden');
+            document.getElementById('printScreen').classList.remove('hidden');
+            window.print();
+            resetAll();
+            closeModal();
+        }
+
+
+        function resetAll() {
+            location.reload();
+        }
+        function closeModal() {
+
+            document.getElementById('openModal').style.display = 'none';
+        }
+
+        function playSound(file) {
+
+            audio.src = file;
+            // console.log("I am here"+file)
+            audio.load();
+            audio.play();
+        }
+    </script>
+
+
+
+
+
+</body>
+
+
+</html>
